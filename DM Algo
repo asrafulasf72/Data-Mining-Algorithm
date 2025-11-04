@@ -1,1 +1,6 @@
 Apriori Algorithm (raw Python implementation)
+Abstract
+This lab report presents a clear, self-contained implementation of the Apriori algorithm written in raw Python (no external data-mining libraries). The objective is to discover frequent itemsets and generate association rules from a transactional dataset. The report includes the theoretical background, algorithmic steps, the complete Python implementation, a small example dataset, experiment results (frequent itemsets and association rules), complexity analysis, limitations, and suggestions for improvement. The implementation is designed for reproducibility and assessment.
+1. Introduction
+Apriori is a classic algorithm in association rule mining used to identify frequent itemsets in a transactional database and to derive association rules from those itemsets. The algorithm uses the Apriori property: all non-empty subsets of a frequent itemset must also be frequent. Apriori iteratively generates candidate itemsets of increasing size and prunes candidates that contain infrequent subsets.
+This lab demonstrates Apriori implemented in plain Python, explains each step, and shows how to tune minimum support and confidence to obtain meaningful rules.
