@@ -1,0 +1,64 @@
+# AdaBoost Algorithm Implementation
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Algorithm Overview](#algorithm-overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Example](#example)
+- [Results](#results)
+- [Advantages & Disadvantages](#advantages--disadvantages)
+- [References](#references)
+
+---
+
+## Introduction
+This project demonstrates the **AdaBoost (Adaptive Boosting) algorithm** in data mining for classification tasks.  
+AdaBoost combines multiple weak classifiers to create a strong predictive model. It emphasizes misclassified samples in each iteration to improve overall accuracy.
+
+---
+
+## Algorithm Overview
+1. Initialize weights for all training samples equally.  
+2. Train a weak classifier on the dataset.  
+3. Calculate the classifier's error rate and assign a weight to it.  
+4. Update sample weights to give more importance to misclassified samples.  
+5. Repeat steps 2–4 for a predefined number of iterations.  
+6. Combine all weak classifiers using weighted voting to form the final strong classifier.
+
+**Mathematical Formulas:**
+
+- Error rate:  
+\[
+\text{error} = \sum_{i=1}^{N} w_i \cdot I(y_i \neq \hat{y}_i)
+\]
+
+- Classifier weight:  
+\[
+\alpha = \frac{1}{2} \ln \frac{1 - \text{error}}{\text{error}}
+\]
+
+- Update sample weights:  
+\[
+w_i \leftarrow w_i \cdot e^{\alpha \cdot I(y_i \neq \hat{y}_i)}
+\]
+
+- Final prediction:  
+\[
+H(x) = \text{sign}\Big(\sum_{t=1}^{T} \alpha_t h_t(x)\Big)
+\]
+
+---
+
+## Features
+- Implements AdaBoost using decision stumps (one-level decision trees).  
+- Handles binary classification problems.  
+- Visualizes misclassified samples and weight updates (optional).  
+
+---
+
+## Installation
+1. Clone the repository:  
+```bash
+git clone https://github.com/your-username/adaboost-project.git
